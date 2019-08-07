@@ -1,0 +1,140 @@
+@charset "utf-8";
+@import "partial/settings";
+/* Styles.scss */
+
+
+
+/* layout styles */
+.o-page {
+    font-family: 'myfont';
+    font-size: .75rem;
+    line-height: 1.6;
+    background-color: map-get($base, white);
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-width: 1180px;
+        margin: auto;
+    }
+}
+
+.header {
+    display: flex;
+    padding: 1.5rem;
+    background-color: map-get($base, lightgrey);
+    border-bottom: 1px solid mix(black, map-get($base, lightgrey), 6%);
+    div {
+        margin-left: auto;
+    }
+} 
+
+.main,
+.aside {
+    padding: 1.5rem;
+}
+
+.aside {
+    background-color: mix(black, map-get($base, lightgrey), 2%);
+}
+
+.footer {
+    padding: 1.5rem;
+    background-color: map-get($base, lightgrey);
+    border-top: 1px solid mix(black, map-get($base, lightgrey), 6%);
+}
+
+@media all and (min-width: 60em) {
+    .o-page__inner {
+        flex-direction: row;
+    }
+
+    .header,
+    .footer {
+        flex-basis: 100%;
+    }
+
+    .main {
+        flex-basis: 100%;
+        &--sidebar {
+            flex-basis: 66%;
+        }
+    }
+
+    .aside {
+        flex-basis: 34%;
+    }
+
+    .main,
+    .aside {
+        padding: 3rem;
+    }
+}
+
+
+
+/* utility */
+.mb-4 {
+    margin-bottom: 4.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 2.25rem;
+}
+
+.mb-1 {
+    margin-bottom: 1.5rem;
+}
+
+.php {
+    display: block;
+    width: 120px;
+    height: 20px;
+    color: map-get($base, white);
+    background-color: map-get($nord, nord10);
+    text-align: center;
+}
+
+
+
+/* gral. styles */
+
+.menu {
+    margin-left: 1rem;
+    li {
+        display: inline-block;
+        margin: 0 .5rem;
+    }
+}
+
+.paginacion {
+    display: flex;
+    a:last-of-type {
+        margin-left: auto;
+    }
+}
+
+
+
+/* single.php styles */
+.commentlist {
+    margin-top: 2.25rem;
+}
+
+.comment-body {
+    margin-bottom: 2.25rem;
+}
+
+.children {
+    margin-left: 1.5rem;
+}
+
+.says {
+    display: none;
+}
+
+.comment-form-cookies-consent label {
+    display: inline;
+}
+
+
