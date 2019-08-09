@@ -1,0 +1,103 @@
+@import 'palette';
+/* _Settings.scss */
+
+/* Reset */
+html, body,
+h1, h2, h3, h4, h5, h6,
+a, p, span,
+em, small, strong,
+sub, sup,
+mark, del, ins, strike,
+abbr, dfn,
+blockquote, q, cite,
+code, pre,
+ol, ul, li, dl, dt, dd,
+div, section, article,
+main, aside, nav,
+header, hgroup, footer,
+img, picture, figure, figcaption,
+address, time,
+audio, video,
+canvas, iframe,
+details, summary,
+fieldset, form, label, legend,
+table, caption,
+tbody, tfoot, thead,
+tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+html {
+    /* How the user agent should calculate the total width and height of an element.
+    See: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+    See: https://allthingssmitty.com/2017/01/09/css-reset-for-minimalists */
+    box-sizing: border-box;  
+    /* Prevent adjustments of font size after orientation changes in iOS. */
+    -webkit-text-size-adjust: 100%;   
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1 {font-size: 3.375rem;}
+h2 {font-size: 2.25rem;}
+h3 {margin-top: 1rem; font-size: 1.5rem;}
+p {font-size: .875rem; margin-bottom: .875rem;}
+
+a, a:visited {
+    color: map-get($nord, nord10);
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main,
+label {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+small {
+    font-size: 80%;
+}
+
+img, video {
+    max-width: 100%;
+    /* Remove vertical spacing due to line-height (inline-block elements) */
+    vertical-align: middle;
+}
+
+hr {
+    border:0;
+    height: 0;
+    border-bottom: 1px solid mix(black, map-get($base, lightgrey), 6%);
+}
+
+/* Font loading. */
+@font-face {
+    font-family: 'myfont'; 
+    src: url("../fonts/myfont.woff2") format('woff2'),
+    url("../fonts/myfont.woff") format('woff');
+    /* Unicode-range subsetting defines the characters that are supported by the font. 
+    See: https://unicode-table.com/en */
+    unicode-range: U+0020—007F, U+0100—017F, 0400—04FF; 
+    font-style: normal;
+    font-weight: 400;
+    /* How font files are loaded and displayed by the browser. */
+    font-display: swap;
+}
+$myfont: 'myfont', Arial, Helvetica, sans-serif;
